@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README_zh.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="如何强制玩家切换到公网ip进入-radminvpn-虚拟局域网下的-minecraft-服务器">如何强制玩家切换到公网IP进入 RadminVPN 虚拟局域网下的 Minecraft 服务器</h1>
+<p>v1.0 | 作者 AXFJ | 文档遵循 CC BY 4.0 协议。</p>
+<p><a href="README.md">English</a> | <strong>中文</strong></p>
+<h2 id="1-前言">1. 前言</h2>
+<blockquote>
+<p>在 RadminVPN 等虚拟局域网下开服，经常会遇到恶意破坏的玩家。由于虚拟网络的特殊性，用户可以使用特殊手段切换IP，因此ban-ip并不能有效地阻挡破坏者。</p>
+</blockquote>
+<ul>
+<li>本教程讲述了如何强制所有玩家自动切换到公网IP加入服务器。</li>
+<li>在按照教程配置后，可以达到以下效果：
+<ol>
+<li>玩家通过虚拟IP进入你的服务器</li>
+<li>玩家被无缝重定向到公网IP服务器（可以是FRP），因此自己也会使用公网IP进入服务器</li>
+<li>因此玩家暴露自己的虚拟IP和公网IP，若被ban-ip，即使切换虚拟IP也会用相同的公网IP进入服务器，大幅提高服务器的安全性</li>
+</ol>
+</li>
+</ul>
+<h2 id="2-原理">2. 原理</h2>
+<p>（涉及游戏通信协议技术，不想看可以跳到下一节）</p>
+<p>原版游戏有 <code>/transfer</code> 指令，该指令可以将指定玩家转移到另一个服务器。因此，通过使用一个特殊服务端，在玩家一旦加入服务器后立即发送 <code>ServerTransferS2CPacket</code> 到我们的另一个处在公网IP的服务器，从而以公网IP进入服务器。</p>
+<p>需要注意的是，这个过程对于客户端是<strong>不透明的</strong>。因此，别有用心的玩家可以修改客户端使其接收到转移包后，发现是目标服务器是公网IP后立刻断开连接。不过这样也无大碍，毕竟他无法进入真正的服务器。对于这类可能存在的拒绝进一步连接的客户端即是可疑IP。</p>
+<h2 id="3-准备工作">3. 准备工作</h2>
+<p>准备好这些：</p>
+<ol>
+<li><a href="github.com/AXFJ/Transfer-Server-Router/releases">Transfer Server Router</a>：转移服核心，或者从<a href="https://wwati.lanzouu.com/i6jPf44cj7zc">蓝奏云</a> 下载</li>
+<li>Minecraft 服务器核心：建议使用 Paper 或 Purpur。文档中使用 1.21.11 版本（对于非 Paper 及其衍生核心的配置略复杂，后面会提到）</li>
+<li>内网穿透（FRP）或 公网IP服务器：推荐使用内网穿透<a href="https://chmlfrp.net">ChmlFrp</a>，稳定免费</li>
+<li>局域网广播器（可选）：用于将你的服务器广播到局域网世界列表。可以使用<a href="https://github.com/AXFJ/Sculk-Toolkit">Sculk Toolkit</a>（或从<a href="https://wwati.lanzouu.com/i6Ofv44cjsib">蓝奏云</a>下载）
+然后就可以开始配置了。</li>
+</ol>
+<hr>
+<h2 id="4-开始配置">4. 开始配置</h2>
+<h3 id="1-启动转移服务">1. 启动转移服务</h3>
+<ol>
+<li>
+<p>打开 Transfer Server Router。
+应该会显示如下日志：</p>
+<pre class="hljs"><code><div>Transfer Server Router v1.0 by AXFJ
+See https://github.com/AXFJ/Transfer-Server-Router.
+[2026-08-24 18:12:50] [INFO] [-] Configuration file tsr_server.properties does not exist, using default configuration and creating default file.
+[2026-08-24 18:12:50] [INFO] [-] Listen on：0.0.0.0:25565 -&gt; example.com:25565
+[2026-08-24 18:12:50] [INFO] [-] Protocol Version：774
+[2026-08-24 18:12:50] [INFO] [-] Limitations：Total Concurrent=5, Per-IP Concurrent=2, Rate=1.0 req/s, Timeout=15s
+</div></code></pre>
+<p>这时就可以关闭程序了。</p>
+<p>此时程序文件夹下会多出一个 <code>tsr_server.properties</code>，是转移服的配置文件，打开它，找到如下几项：</p>
+<pre class="hljs"><code><div><span class="hljs-attr">ip</span>=<span class="hljs-string">0.0.0.0</span>
+<span class="hljs-attr">port</span>=<span class="hljs-string">25565</span>
+</div></code></pre>
+<p>这是转移服要运行在的位置，建议使用默认25565端口，其余按照自己需求修改，<code>ip</code> 一般无需修改。</p>
+<pre class="hljs"><code><div><span class="hljs-attr">target-ip</span>=<span class="hljs-string">example.com</span>
+<span class="hljs-attr">target-port</span>=<span class="hljs-string">25565</span>
+</div></code></pre>
+<p>这是转移服在玩家连接后将要转移的位置，稍后我们会修改。其它项一般无需修改。</p>
+</li>
+<li>
+<p>启动转移服。</p>
+</li>
+</ol>
+<h3 id="2-准备内网穿透">2. 准备内网穿透</h3>
+<p>这个部分将会使用<a href="https://chmlfrp.net">ChmlFrp</a>进行演示，使用别的也行，操作大致相同。</p>
+<ol>
+<li>
+<p>打开<a href="https://chmlfrp.net">ChmlFrp</a>，注册账号。</p>
+</li>
+<li>
+<p>打开仪表盘，找到“隧道管理”。</p>
+</li>
+<li>
+<p>选择你喜欢的节点创建一个隧道。</p>
+<img src="./images/1.png" alt="替代文本" width="300" height="200">
+<p>内网端口是你的服务器运行的端口，外网端口可以任选。
+“额外参数”一定要填写如下：</p>
+<pre class="hljs"><code><div><span class="hljs-attr">proxy_protocol_version</span> = v2
+</div></code></pre>
+</li>
+<li>
+<p>此时，你可用把 <code>tsr_server.properties</code> 中的 <code>target-ip</code> 和 <code>target-port</code>改成你的隧道信息了。推荐使用25566端口。</p>
+</li>
+</ol>
+<h3 id="3-运行内网穿透">3. 运行内网穿透</h3>
+<ol>
+<li>从你的内网穿透官网下载客户端，登录。</li>
+<li>启用你的隧道。</li>
+</ol>
+<p>至此内网穿透部分配置完成</p>
+<h3 id="4-启动-minecraft-服务器">4. 启动 Minecraft 服务器</h3>
+<ol>
+<li>
+<p>从 <a href="https://fill-ui.papermc.io/projects/paper/version/1.21.11">Paper</a> 官网下载 1.21.11 服务器核心。更高或更低的版本可能兼容，建议先使用 1.21.11 版本</p>
+</li>
+<li>
+<p>保存到任意文件夹，打开终端运行：</p>
+<pre class="hljs"><code><div>java -jar paper-1.21.11-132.jar
+</div></code></pre>
+</li>
+<li>
+<p>出现“Done”时关闭服务器，进行进一步配置。</p>
+</li>
+<li>
+<p>打开 <code>server.properties</code>，修改如下几项：</p>
+<pre class="hljs"><code><div><span class="hljs-attr">accept-transfers</span>=<span class="hljs-string">true</span>
+<span class="hljs-attr">...</span>
+<span class="hljs-attr">ip</span>=<span class="hljs-string">127.0.0.1</span>
+<span class="hljs-attr">port</span>=<span class="hljs-string">&lt;你内网穿透中设定的隧道本地IP&gt;</span>
+<span class="hljs-attr">...</span>
+</div></code></pre>
+<p>这里必须把<code>ip</code>设置成<code>127.0.0.1</code>。</p>
+</li>
+<li>
+<p>对于 Paper 系服务器：</p>
+<ol>
+<li>打开<code>config\paper-global.yml</code></li>
+<li>找到这一段：<pre class="hljs"><code><div><span class="hljs-attr">proxies:</span>
+  <span class="hljs-string">...</span>
+  <span class="hljs-attr">proxy-protocol:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-string">...</span>
+</div></code></pre>
+把 <code>proxy-protocol</code> 改成 <code>true</code>。</li>
+</ol>
+<p>对于非 Paper 系服务器（上游 Spigot 也算），需要安装插件，这里不多赘述。以下是参考：</p>
+<ul>
+<li>Spigot / Bukkit：HAProxy Detector</li>
+<li>Fabric / Quilt: Proxy Protocol Support</li>
+<li>Forge / NeoForge: 同上</li>
+<li>原版：无法配置</li>
+</ul>
+</li>
+<li>
+<p>启动服务器。</p>
+</li>
+</ol>
+<h2 id="5-完成">5. 完成</h2>
+<p>至此，所有程序已经配置完成。现在打开游戏客户端，输入你的虚拟IP（转移服的端口），看看是否连接到了公网服务器，以及服务器后台是否显示了你的公网IP。</p>
+<h2 id="6-faq">6. FAQ</h2>
+<p>出现任何问题，先把教程从头到尾再过一遍，如果还是有问题，可以联系我。</p>
+<p>QQ：3647980885</p>
+<p>邮箱：its-axfj@outlook.com</p>
+<p>哦对了，如果你要使用广播器请使用仅LAN模式。</p>
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="how-to-force-players-to-switch-to-a-public-ip-to-join-a-minecraft-server-under-a-radminvpn-virtual-lan">How to Force Players to Switch to a Public IP to Join a Minecraft Server Under a RadminVPN Virtual LAN</h1>
+<p>v1.0 | by AXFJ | This document is licensed under CC BY 4.0.</p>
+<p><strong>English</strong> | <a href="README_zh.md">中文</a></p>
+<h2 id="1-preface">1. Preface</h2>
+<blockquote>
+<p>When hosting a server under a virtual LAN such as RadminVPN, you often encounter malicious griefers. Because of the special nature of virtual networks, users can switch IP addresses using special methods, so ban-ip cannot effectively block griefers.</p>
+</blockquote>
+<ul>
+<li>This tutorial explains how to force all players to automatically switch to a public IP when joining the server.</li>
+<li>After following this tutorial, you can achieve the following:
+<ol>
+<li>Players enter your server through the virtual IP.</li>
+<li>Players are seamlessly redirected to a public IP server (which can be FRP), and therefore they themselves will also use the public IP to enter the server.</li>
+<li>As a result, players expose both their virtual IP and public IP. If they are banned by IP, even if they change their virtual IP, they will still join the server using the same public IP, greatly improving server security.</li>
+</ol>
+</li>
+</ul>
+<h2 id="2-how-it-works">2. How It Works</h2>
+<p>(This involves game communication protocol technology. If you don't want to read it, skip to the next section.)</p>
+<p>The vanilla game has a <code>/transfer</code> command that can transfer a specified player to another server. Therefore, by using a special server that immediately sends <code>ServerTransferS2CPacket</code> to our other server located on a public IP as soon as a player joins, the player enters the server via the public IP.</p>
+<p>It should be noted that this process is <strong>not transparent</strong> to the client. Therefore, players with malicious intent can modify the client so that after receiving the transfer packet, it immediately disconnects when it discovers the target server is a public IP. However, this does not cause much trouble, since they cannot enter the actual server. Such clients that refuse further connection are themselves suspicious IPs.</p>
+<h2 id="3-preparation">3. Preparation</h2>
+<p>Prepare the following:</p>
+<ol>
+<li><a href="github.com/AXFJ/Transfer-Server-Router/releases">Transfer Server Router</a>: the transfer server core, or download it from <a href="https://wwati.lanzouu.com/i6jPf44cj7zc">Lanzou Cloud</a>.</li>
+<li>Minecraft server core: Paper or Purpur is recommended. This document uses version 1.21.11. Configuration for cores other than Paper and its derivatives is slightly more complicated, as mentioned later.</li>
+<li>FRP (intranet penetration) or a public IP server: it is recommended to use <a href="https://chmlfrp.net">ChmlFrp</a>, which is stable and free.</li>
+<li>LAN broadcaster (optional): used to broadcast your server to the LAN world list. You can use <a href="https://github.com/AXFJ/Sculk-Toolkit">Sculk Toolkit</a> or download it from <a href="https://wwati.lanzouu.com/i6Ofv44cjsib">Lanzou Cloud</a>.</li>
+</ol>
+<p>Then you can begin configuration.</p>
+<hr>
+<h2 id="4-configuration">4. Configuration</h2>
+<h3 id="1-start-the-transfer-service">1. Start the Transfer Service</h3>
+<ol>
+<li>
+<p>Open Transfer Server Router.
+It should display a log similar to the following:</p>
+<pre class="hljs"><code><div>Transfer Server Router v1.0 by AXFJ
+See https://github.com/AXFJ/Transfer-Server-Router.
+[2026-08-24 18:12:50] [INFO] [-] Configuration file tsr_server.properties does not exist, using default configuration and creating default file.
+[2026-08-24 18:12:50] [INFO] [-] Listen on：0.0.0.0:25565 -&gt; example.com:25565
+[2026-08-24 18:12:50] [INFO] [-] Protocol Version：774
+[2026-08-24 18:12:50] [INFO] [-] Limitations：Total Concurrent=5, Per-IP Concurrent=2, Rate=1.0 req/s, Timeout=15s
+</div></code></pre>
+<p>You can close the program at this point.</p>
+<p>At this point, a <code>tsr_server.properties</code> file will appear in the program folder. This is the transfer server's configuration file. Open it and find the following settings:</p>
+<pre class="hljs"><code><div><span class="hljs-attr">ip</span>=<span class="hljs-string">0.0.0.0</span>
+<span class="hljs-attr">port</span>=<span class="hljs-string">25565</span>
+</div></code></pre>
+<p>This is where the transfer server will run. It is recommended to use the default port 25565; modify other settings as needed. Usually there is no need to change <code>ip</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-attr">target-ip</span>=<span class="hljs-string">example.com</span>
+<span class="hljs-attr">target-port</span>=<span class="hljs-string">25565</span>
+</div></code></pre>
+<p>This is the location to which the transfer server will redirect players after they connect. We will modify it later. Other options generally do not need to be changed.</p>
+</li>
+<li>
+<p>Start the transfer server.</p>
+</li>
+</ol>
+<h3 id="2-prepare-frp">2. Prepare FRP</h3>
+<p>This section will use <a href="https://chmlfrp.net">ChmlFrp</a> as an example; you can use other providers, and the steps are roughly the same.</p>
+<ol>
+<li>
+<p>Open <a href="https://chmlfrp.net">ChmlFrp</a> and register an account.</p>
+</li>
+<li>
+<p>Open the dashboard and find &quot;Tunnel Management&quot;.</p>
+</li>
+<li>
+<p>Choose a node you like and create a tunnel.</p>
+<img src="./images/1.png" alt="Alternative text" width="300" height="200">
+<p>The internal port is the port on which your server runs; the external port can be chosen arbitrarily.
+The &quot;Extra parameters&quot; field must be filled in as follows:</p>
+<pre class="hljs"><code><div><span class="hljs-attr">proxy_protocol_version</span> = v2
+</div></code></pre>
+</li>
+<li>
+<p>Now you can change <code>target-ip</code> and <code>target-port</code> in <code>tsr_server.properties</code> to your tunnel information. Port 25566 is recommended.</p>
+</li>
+</ol>
+<h3 id="3-run-frp">3. Run FRP</h3>
+<ol>
+<li>Download the client from your FRP provider's website and log in.</li>
+<li>Enable your tunnel.</li>
+</ol>
+<p>The FRP configuration is now complete.</p>
+<h3 id="4-start-the-minecraft-server">4. Start the Minecraft Server</h3>
+<ol>
+<li>
+<p>Download the 1.21.11 server core from the <a href="https://fill-ui.papermc.io/projects/paper/version/1.21.11">Paper</a> official website. Higher or lower versions may be compatible, but it is recommended to start with 1.21.11.</p>
+</li>
+<li>
+<p>Save it to any folder, open a terminal, and run:</p>
+<pre class="hljs"><code><div>java -jar paper-1.21.11-132.jar
+</div></code></pre>
+</li>
+<li>
+<p>When &quot;Done&quot; appears, stop the server and proceed with further configuration.</p>
+</li>
+<li>
+<p>Open <code>server.properties</code> and modify the following settings:</p>
+<pre class="hljs"><code><div><span class="hljs-attr">accept-transfers</span>=<span class="hljs-string">true</span>
+<span class="hljs-attr">...</span>
+<span class="hljs-attr">ip</span>=<span class="hljs-string">127.0.0.1</span>
+<span class="hljs-attr">port</span>=<span class="hljs-string">&lt;the local port you set for the tunnel in your FRP configuration&gt;</span>
+<span class="hljs-attr">...</span>
+</div></code></pre>
+<p>Here, <code>ip</code> must be set to <code>127.0.0.1</code>.</p>
+</li>
+<li>
+<p>For Paper-based servers:</p>
+<ol>
+<li>Open <code>config\paper-global.yml</code>.</li>
+<li>Find this section:<pre class="hljs"><code><div><span class="hljs-attr">proxies:</span>
+  <span class="hljs-string">...</span>
+  <span class="hljs-attr">proxy-protocol:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-string">...</span>
+</div></code></pre>
+Change <code>proxy-protocol</code> to <code>true</code>.</li>
+</ol>
+<p>For non-Paper servers (including upstream Spigot), you need to install a plugin; I will not go into detail here. The following are references:</p>
+<ul>
+<li>Spigot / Bukkit: HAProxy Detector</li>
+<li>Fabric / Quilt: Proxy Protocol Support</li>
+<li>Forge / NeoForge: same as above</li>
+<li>Vanilla: cannot be configured</li>
+</ul>
+</li>
+<li>
+<p>Start the server.</p>
+</li>
+</ol>
+<h2 id="4-done">4. Done</h2>
+<p>At this point, all programs have been configured. Now open the game client, enter your virtual IP (the transfer server's port), and check whether you are connected to the public server and whether the server console shows your public IP.</p>
+<h2 id="5-faq">5. FAQ</h2>
+<p>If you run into any problems, go through the tutorial from beginning to end again. If you still have issues, you can contact me.</p>
+<p>QQ: 3647980885</p>
+<p>Email: its-axfj@outlook.com</p>
+<p>Oh, by the way, if you want to use the broadcaster, please use LAN-only mode.</p>
+
+</body>
+</html>
