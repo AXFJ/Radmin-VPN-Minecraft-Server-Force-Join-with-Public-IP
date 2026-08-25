@@ -1,5 +1,5 @@
 # 如何强制玩家切换到公网IP进入 RadminVPN 虚拟局域网下的 Minecraft 服务器
-v1.0 | 作者 AXFJ | 文档遵循 CC BY 4.0 协议。
+v1.0 | 作者 AXFJ | [Github](https://github.com/AXFJ/Radmin-VPN-Minecraft-Server-Force-Join-with-Public-IP) | 文档遵循 CC BY 4.0 协议。
 
 [English](README.md) | **中文**
 
@@ -27,7 +27,8 @@ v1.0 | 作者 AXFJ | 文档遵循 CC BY 4.0 协议。
 1. [Transfer Server Router](github.com/AXFJ/Transfer-Server-Router/releases)：转移服核心，或者从[蓝奏云](https://wwati.lanzouu.com/i6jPf44cj7zc) 下载
 2. Minecraft 服务器核心：建议使用 Paper 或 Purpur。文档中使用 1.21.11 版本（对于非 Paper 及其衍生核心的配置略复杂，后面会提到）
 3. 内网穿透（FRP）或 公网IP服务器：如果你没有公网服务器，推荐使用这个内网穿透[ChmlFrp](https://chmlfrp.net)，稳定免费
-4. 局域网广播器（可选）：用于将你的服务器广播到局域网世界列表。可以使用[Sculk Toolkit](https://github.com/AXFJ/Sculk-Toolkit)（或从[蓝奏云](https://wwati.lanzouu.com/i6Ofv44cjsib)下载）
+4. 局域网广播器（可选）：用于将你的服务器广播到局域网世界列表。
+
 然后就可以开始配置了。
 
 ---

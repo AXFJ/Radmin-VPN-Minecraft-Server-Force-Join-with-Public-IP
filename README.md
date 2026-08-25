@@ -1,5 +1,5 @@
 # How to Force Players to Switch to a Public IP to Join a Minecraft Server Under a RadminVPN Virtual LAN
-v1.0 | by AXFJ | This document is licensed under CC BY 4.0.
+v1.0 | by AXFJ | [Github](https://github.com/AXFJ/Radmin-VPN-Minecraft-Server-Force-Join-with-Public-IP) | This document is licensed under CC BY 4.0.
 
 **English** | [中文](README_zh.md)
 
@@ -27,7 +27,7 @@ Prepare the following:
 1. [Transfer Server Router](github.com/AXFJ/Transfer-Server-Router/releases): the transfer server core, or download it from [Lanzou Cloud](https://wwati.lanzouu.com/i6jPf44cj7zc).
 2. Minecraft server core: Paper or Purpur is recommended. This document uses version 1.21.11. Configuration for cores other than Paper and its derivatives is slightly more complicated, as mentioned later.
 3. FRP (intranet penetration) or a public IP server: it is recommended to use [ChmlFrp](https://chmlfrp.net), which is stable and free.
-4. LAN broadcaster (optional): used to broadcast your server to the LAN world list. You can use [Sculk Toolkit](https://github.com/AXFJ/Sculk-Toolkit) or download it from [Lanzou Cloud](https://wwati.lanzouu.com/i6Ofv44cjsib).
+4. LAN broadcaster (optional): used to broadcast your server to the LAN world list.
 
 Then you can begin configuration.
 
