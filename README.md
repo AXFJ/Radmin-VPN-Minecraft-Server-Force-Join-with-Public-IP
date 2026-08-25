@@ -62,9 +62,11 @@ Then you can begin configuration.
    This is the location to which the transfer server will redirect players after they connect. We will modify it later. Other options generally do not need to be changed.
 2. Start the transfer server.
 
-### 2. Prepare FRP
+### 2. Preparing Intranet Tunneling
 
-This section will use [ChmlFrp](https://chmlfrp.net) as an example; you can use other providers, and the steps are roughly the same.
+If you have a public IP address, skip this section.
+
+This section will use [ChmlFrp](https://chmlfrp.net) as a demonstration. You can use other services as well; the steps are basically the same.
 
 1. Open [ChmlFrp](https://chmlfrp.net) and register an account.
 2. Open the dashboard and find "Tunnel Management".
@@ -72,19 +74,27 @@ This section will use [ChmlFrp](https://chmlfrp.net) as an example; you can use 
 
    <img src="./images/1.png" alt="Alternative text" width="300" height="200">
 
-   The internal port is the port on which your server runs; the external port can be chosen arbitrarily.
-   The "Extra parameters" field must be filled in as follows:
+   The internal port is the port your server runs on, and the external port can be any port you choose.
+   The "Extra Parameters" must be filled in as follows:
    ```ini
    proxy_protocol_version = v2
    ```
 4. Now you can change `target-ip` and `target-port` in `tsr_server.properties` to your tunnel information. Port 25566 is recommended.
 
-### 3. Run FRP
+### 3. Running the Intranet Tunnel
 
-1. Download the client from your FRP provider's website and log in.
-2. Enable your tunnel.
+1. Download the **core command-line client** from your tunneling provider's official website. This is very important.
+ 
+   <img src="./images/2.png" alt="Alternative text" width="300" height="200">
 
-The FRP configuration is now complete.
+2. Find the "Configuration File" section on the dashboard, go in, select your node and tunnel, and click Generate. You will then see a bash script in the "Startup Command" section, similar to this:
+   ```bash
+   frpc.exe -u uwDm8l...XgpzX -p 319120
+   ```
+3. Copy it and run it in the directory containing the core file `frpc.exe`.
+4. If everything is fine, frp has started successfully.
+
+This completes the intranet tunneling configuration.
 
 ### 4. Start the Minecraft Server
 

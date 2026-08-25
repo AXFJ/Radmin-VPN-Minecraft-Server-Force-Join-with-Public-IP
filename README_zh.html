@@ -391,7 +391,7 @@ code {
 <ol>
 <li><a href="github.com/AXFJ/Transfer-Server-Router/releases">Transfer Server Router</a>：转移服核心，或者从<a href="https://wwati.lanzouu.com/i6jPf44cj7zc">蓝奏云</a> 下载</li>
 <li>Minecraft 服务器核心：建议使用 Paper 或 Purpur。文档中使用 1.21.11 版本（对于非 Paper 及其衍生核心的配置略复杂，后面会提到）</li>
-<li>内网穿透（FRP）或 公网IP服务器：推荐使用内网穿透<a href="https://chmlfrp.net">ChmlFrp</a>，稳定免费</li>
+<li>内网穿透（FRP）或 公网IP服务器：如果你没有公网服务器，推荐使用这个内网穿透<a href="https://chmlfrp.net">ChmlFrp</a>，稳定免费</li>
 <li>局域网广播器（可选）：用于将你的服务器广播到局域网世界列表。可以使用<a href="https://github.com/AXFJ/Sculk-Toolkit">Sculk Toolkit</a>（或从<a href="https://wwati.lanzouu.com/i6Ofv44cjsib">蓝奏云</a>下载）
 然后就可以开始配置了。</li>
 </ol>
@@ -425,6 +425,7 @@ See https://github.com/AXFJ/Transfer-Server-Router.
 </li>
 </ol>
 <h3 id="2-准备内网穿透">2. 准备内网穿透</h3>
+<p>如果你有公网地址，跳过这一节。</p>
 <p>这个部分将会使用<a href="https://chmlfrp.net">ChmlFrp</a>进行演示，使用别的也行，操作大致相同。</p>
 <ol>
 <li>
@@ -447,8 +448,21 @@ See https://github.com/AXFJ/Transfer-Server-Router.
 </ol>
 <h3 id="3-运行内网穿透">3. 运行内网穿透</h3>
 <ol>
-<li>从你的内网穿透官网下载客户端，登录。</li>
-<li>启用你的隧道。</li>
+<li>
+<p>从你的内网穿透官网下载<strong>核心文件命令行</strong>客户端，这一点很重要。</p>
+<img src="./images/2.png" alt="替代文本" width="300" height="200">
+</li>
+<li>
+<p>找到仪表盘上“配置文件”一栏，进去选择你的节点和隧道，点击生成。此时你会看到“启动代码”一栏内有一行bash脚本，类似这样：</p>
+<pre class="hljs"><code><div>frpc.exe -u uwDm8l...XgpzX -p 319120
+</div></code></pre>
+</li>
+<li>
+<p>复制它，放到核心文件 <code>frpc.exe</code> 目录下运行。</p>
+</li>
+<li>
+<p>如果没问题，此时frp已经启动成功。</p>
+</li>
 </ol>
 <p>至此内网穿透部分配置完成</p>
 <h3 id="4-启动-minecraft-服务器">4. 启动 Minecraft 服务器</h3>

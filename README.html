@@ -424,8 +424,9 @@ See https://github.com/AXFJ/Transfer-Server-Router.
 <p>Start the transfer server.</p>
 </li>
 </ol>
-<h3 id="2-prepare-frp">2. Prepare FRP</h3>
-<p>This section will use <a href="https://chmlfrp.net">ChmlFrp</a> as an example; you can use other providers, and the steps are roughly the same.</p>
+<h3 id="2-preparing-intranet-tunneling">2. Preparing Intranet Tunneling</h3>
+<p>If you have a public IP address, skip this section.</p>
+<p>This section will use <a href="https://chmlfrp.net">ChmlFrp</a> as a demonstration. You can use other services as well; the steps are basically the same.</p>
 <ol>
 <li>
 <p>Open <a href="https://chmlfrp.net">ChmlFrp</a> and register an account.</p>
@@ -436,8 +437,8 @@ See https://github.com/AXFJ/Transfer-Server-Router.
 <li>
 <p>Choose a node you like and create a tunnel.</p>
 <img src="./images/1.png" alt="Alternative text" width="300" height="200">
-<p>The internal port is the port on which your server runs; the external port can be chosen arbitrarily.
-The &quot;Extra parameters&quot; field must be filled in as follows:</p>
+<p>The internal port is the port your server runs on, and the external port can be any port you choose.
+The &quot;Extra Parameters&quot; must be filled in as follows:</p>
 <pre class="hljs"><code><div><span class="hljs-attr">proxy_protocol_version</span> = v2
 </div></code></pre>
 </li>
@@ -445,12 +446,25 @@ The &quot;Extra parameters&quot; field must be filled in as follows:</p>
 <p>Now you can change <code>target-ip</code> and <code>target-port</code> in <code>tsr_server.properties</code> to your tunnel information. Port 25566 is recommended.</p>
 </li>
 </ol>
-<h3 id="3-run-frp">3. Run FRP</h3>
+<h3 id="3-running-the-intranet-tunnel">3. Running the Intranet Tunnel</h3>
 <ol>
-<li>Download the client from your FRP provider's website and log in.</li>
-<li>Enable your tunnel.</li>
+<li>
+<p>Download the <strong>core command-line client</strong> from your tunneling provider's official website. This is very important.</p>
+<img src="./images/2.png" alt="Alternative text" width="300" height="200">
+</li>
+<li>
+<p>Find the &quot;Configuration File&quot; section on the dashboard, go in, select your node and tunnel, and click Generate. You will then see a bash script in the &quot;Startup Command&quot; section, similar to this:</p>
+<pre class="hljs"><code><div>frpc.exe -u uwDm8l...XgpzX -p 319120
+</div></code></pre>
+</li>
+<li>
+<p>Copy it and run it in the directory containing the core file <code>frpc.exe</code>.</p>
+</li>
+<li>
+<p>If everything is fine, frp has started successfully.</p>
+</li>
 </ol>
-<p>The FRP configuration is now complete.</p>
+<p>This completes the intranet tunneling configuration.</p>
 <h3 id="4-start-the-minecraft-server">4. Start the Minecraft Server</h3>
 <ol>
 <li>

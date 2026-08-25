@@ -26,7 +26,7 @@ v1.0 | 作者 AXFJ | 文档遵循 CC BY 4.0 协议。
 准备好这些：
 1. [Transfer Server Router](github.com/AXFJ/Transfer-Server-Router/releases)：转移服核心，或者从[蓝奏云](https://wwati.lanzouu.com/i6jPf44cj7zc) 下载
 2. Minecraft 服务器核心：建议使用 Paper 或 Purpur。文档中使用 1.21.11 版本（对于非 Paper 及其衍生核心的配置略复杂，后面会提到）
-3. 内网穿透（FRP）或 公网IP服务器：推荐使用内网穿透[ChmlFrp](https://chmlfrp.net)，稳定免费
+3. 内网穿透（FRP）或 公网IP服务器：如果你没有公网服务器，推荐使用这个内网穿透[ChmlFrp](https://chmlfrp.net)，稳定免费
 4. 局域网广播器（可选）：用于将你的服务器广播到局域网世界列表。可以使用[Sculk Toolkit](https://github.com/AXFJ/Sculk-Toolkit)（或从[蓝奏云](https://wwati.lanzouu.com/i6Ofv44cjsib)下载）
 然后就可以开始配置了。
 
@@ -63,6 +63,8 @@ v1.0 | 作者 AXFJ | 文档遵循 CC BY 4.0 协议。
    
 ### 2. 准备内网穿透
 
+如果你有公网地址，跳过这一节。
+
 这个部分将会使用[ChmlFrp](https://chmlfrp.net)进行演示，使用别的也行，操作大致相同。
 
 1. 打开[ChmlFrp](https://chmlfrp.net)，注册账号。
@@ -80,8 +82,16 @@ v1.0 | 作者 AXFJ | 文档遵循 CC BY 4.0 协议。
 
 ### 3. 运行内网穿透
 
-1. 从你的内网穿透官网下载客户端，登录。
-2. 启用你的隧道。
+1. 从你的内网穿透官网下载**核心文件命令行**客户端，这一点很重要。
+ 
+   <img src="./images/2.png" alt="替代文本" width="300" height="200">
+
+2. 找到仪表盘上“配置文件”一栏，进去选择你的节点和隧道，点击生成。此时你会看到“启动代码”一栏内有一行bash脚本，类似这样：
+   ```bash
+   frpc.exe -u uwDm8l...XgpzX -p 319120
+   ```
+3. 复制它，放到核心文件 `frpc.exe` 目录下运行。
+4. 如果没问题，此时frp已经启动成功。
 
 至此内网穿透部分配置完成
 
